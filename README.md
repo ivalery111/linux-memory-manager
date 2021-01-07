@@ -13,3 +13,8 @@
 - [ ] 9. Implementation of xfree
 
 ---
+
+## Credits:
+[Operating System Project - Develop Heap Memory Manager in C](https://www.udemy.com/course/os-project-lmm/)
+
+---
