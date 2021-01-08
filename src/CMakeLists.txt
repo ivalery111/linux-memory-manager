@@ -1,5 +1,5 @@
 add_library(mngr)
-add_library(net::mngr ALIAS mngr)
+add_library(memory::mngr ALIAS mngr)
 
 file(GLOB SOURCES mngr/*.c)
 target_sources(mngr
