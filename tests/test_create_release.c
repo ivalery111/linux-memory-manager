@@ -15,10 +15,10 @@ int main(void) {
   void *addr_two = _mm_create_pages(3);
   assert(addr_two != NULL);
 
-  int rc = mm_release_pages(addr_one, 2);
+  int rc = _mm_release_pages(addr_one, 2);
   assert(rc == MM_OK);
 
-  rc = mm_release_pages(addr_two, 3);
+  rc = _mm_release_pages(addr_two, 3);
   assert(rc == MM_OK);
 
   (void)rc;

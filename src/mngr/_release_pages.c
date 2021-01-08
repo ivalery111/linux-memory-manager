@@ -2,11 +2,20 @@
 #include "mngr_internal.h"
 
 int _mm_release_pages(void *pages_release, const uint8_t pages_num) {
-  if (munmap(pages_release, (size_t){pages_num * (size_t)sysconf(_SC_PAGESIZE)}) ==
-      (-1)) {
-    return MM_ERR_RELEASE;
+  int rc = MM_OK;
+
+  if (pages_release == NULL || pages_num == 0){
+    rc = MM_ERR_INVALID;
+    goto ret;
   }
 
-  return MM_OK;
+  if (munmap(pages_release, (size_t){pages_num * (size_t)sysconf(_SC_PAGESIZE)}) ==
+      (-1)) {
+    rc = MM_ERR_RELEASE;
+    goto ret;
+  }
+
+ret:
+  return rc;
 }
 
