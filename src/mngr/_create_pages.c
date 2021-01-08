@@ -6,7 +6,7 @@
 #include "mngr.h"
 #include "mngr_internal.h"
 
-void *mm_create_pages(const uint8_t pages_num) {
+void *_mm_create_pages(const uint8_t pages_num) {
   const size_t amount_of_memory = ((size_t)sysconf(_SC_PAGESIZE) * pages_num);
 
   char *vm_page = mmap(NULL,
