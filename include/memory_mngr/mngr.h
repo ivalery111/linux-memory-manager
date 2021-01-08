@@ -18,8 +18,6 @@ typedef struct {
   uint8_t pages_num;
 } memory_mngr_t;
 
-int stub(void);
-
 /**
  * @brief Initialize the memory manager entry
  *

@@ -6,8 +6,6 @@
 
 #include "mngr.h"
 
-int _stub(void);
-
 int _mm_release_pages(void *pages_release, const uint8_t pages_num);
 
 #endif
