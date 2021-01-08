@@ -28,16 +28,5 @@ typedef struct {
  */
 int mm_init(memory_mngr_t *mngr);
 
-/**
- * @brief Return pages(memory) back to the kernel
- *
- * @param pages_release Pages to release
- * @param pages_num     Number of pages to release
- *
- * @return MM_OK      on success,
- *         MM_RELEASE on error
- */
-int mm_release_pages(void *pages_release, const uint8_t pages_num);
-
 #endif
 
