@@ -2,7 +2,11 @@
 
 ## Project development phases:
 
-- [ ] 1. VM Page Allocation/Deallocation
+- [X] 1. VM Page Allocation/Deallocation  
+&nbsp; API: mngr.h  
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mm_init  
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mm_create_pages  
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mm_release_pages  
 - [ ] 2. Page Family Registration
 - [ ] 3. Meta blocks and Data blocks
 - [ ] 4. Block Splitting & Merging
