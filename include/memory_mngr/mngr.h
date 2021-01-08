@@ -29,15 +29,6 @@ typedef struct {
 int mm_init(memory_mngr_t *mngr);
 
 /**
- * @brief Request @pages_num number of _contiguos_ pages from a kernel
- *
- * @param pages_num Number of pages to request
- *
- * @return Starting address
- */
-void *mm_create_pages(const uint8_t pages_num);
-
-/**
  * @brief Return pages(memory) back to the kernel
  *
  * @param pages_release Pages to release
