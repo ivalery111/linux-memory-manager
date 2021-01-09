@@ -4,10 +4,14 @@
 #include <stdlib.h>
 
 #include "../src/internal/mngr_internal.h"
+#include "memory_mngr/mngr.h"
 
 int main(void) {
-  memory_mngr_t mngr;
-  mm_init(&mngr);
+/*  memory_mngr_t mngr;*/
+  /*mm_init(&mngr);*/
+
+  memory_mngr_t *mngr = mm_create_mngr();
+  assert(mngr != NULL);
 
   void *addr_one = _mm_create_pages(2);
   assert(addr_one != NULL);
@@ -19,6 +23,9 @@ int main(void) {
   assert(rc == MM_OK);
 
   rc = _mm_release_pages(addr_two, 3);
+  assert(rc == MM_OK);
+
+  rc = mm_release_mngr(mngr);
   assert(rc == MM_OK);
 
   (void)rc;
