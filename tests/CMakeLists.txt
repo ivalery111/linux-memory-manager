@@ -9,3 +9,14 @@ add_test(
     COMMAND test_create_release
 )
 
+add_executable(test_vm_instantiate test_vm_instantiate.c)
+target_link_libraries(test_vm_instantiate
+                      memory::mngr
+                      ${PROJECT_NAME}_project_warnings
+                      ${PROJECT_NAME}_sanitizers
+)
+add_test(
+    NAME test_vm_instantiate
+    COMMAND test_vm_instantiate
+)
+
