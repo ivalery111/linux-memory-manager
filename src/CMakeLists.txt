@@ -1,7 +1,17 @@
 add_library(mngr)
 add_library(memory::mngr ALIAS mngr)
 
-file(GLOB SOURCES mngr/*.c)
+set(SOURCES mngr/_create_pages.c
+            mngr/_release_pages.c
+            mngr/release_pages.c
+            mngr/create_mngr.c
+            mngr/release_mngr.c
+
+            vm_page_family/_instantiate.c
+            vm_page_family/instantiate.c
+            vm_page_family/print.c
+)
+
 target_sources(mngr
     PRIVATE ${SOURCES}
 )
