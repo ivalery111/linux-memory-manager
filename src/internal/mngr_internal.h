@@ -10,11 +10,14 @@
 #include <unistd.h> /* sysconf */
 
 #include "memory_mngr/mngr.h"
+#include "vm_page_family.h"
+#include "defines.h"
 
 struct memory_mngr_s {
   long    sys_page_size;
   void *  page_start_addr;
   uint8_t pages_num;
+  vm_page_family_table_t *vm_page_family_table_head; /* Points to the first vm page in the list */
 };
 
 /**
